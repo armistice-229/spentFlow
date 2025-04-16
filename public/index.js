@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Si le token existe, vérifier s’il est toujours valide
-  fetch("http://localhost:5000/api/user/profile", {
+  fetch("https://spentflow-1.onrender.com/api/user/profile", {
     headers: { Authorization: `Bearer ${token}` }
   })
     .then(res => {
@@ -59,7 +59,7 @@ addBtn.addEventListener("click", () => {
     return showMessage("Veuillez remplir tous les champs correctement.", "error");
   }
 
-  fetch("http://localhost:5000/api/transactions", {
+  fetch("https://spentflow-1.onrender.com/api/transactions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -78,7 +78,7 @@ addBtn.addEventListener("click", () => {
 
 // 🔁 Charger les transactions depuis l'API
 function fetchTransactions() {
-  fetch("http://localhost:5000/api/transactions", {
+  fetch("https://spentflow-1.onrender.com/api/transactions", {
     headers: {
       Authorization: `Bearer ${token}`
     }
@@ -126,7 +126,7 @@ function updateUI(transactions) {
   soldeNet.textContent = formatAmount(revenus - depenses);
 }
 // 🧑‍💼 Récupérer les infos utilisateur
-fetch("http://localhost:5000/api/user/profile", {
+fetch("https://spentflow-1.onrender.com/api/user/profile", {
     headers: {
       Authorization: `Bearer ${token}`
     }
@@ -143,7 +143,7 @@ fetch("http://localhost:5000/api/user/profile", {
 
 // 🗑️ Supprimer une transaction
 function deleteTransaction(id) {
-  fetch(`http://localhost:5000/api/transactions/${id}`, {
+  fetch(`https://spentflow-1.onrender.com/api/transactions/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`
@@ -167,7 +167,7 @@ toggleDark.addEventListener("click", () => {
 resetBtn.addEventListener("click", () => {
   if (!confirm("Réinitialiser toutes les transactions ?")) return;
 
-  fetch("http://localhost:5000/api/transactions", {
+  fetch("https://spentflow-1.onrender.com/api/transactions", {
     headers: { Authorization: `Bearer ${token}` }
   })
     .then(res => res.json())

@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000/api"; // adapte si besoin
+const BASE_URL = "https://spentflow-1.onrender.com/api"; // adapte si besoin
 const loginForm = document.getElementById("loginForm");
 const registerForm = document.getElementById("registerForm");
 const authMessage = document.getElementById("authMessage");
